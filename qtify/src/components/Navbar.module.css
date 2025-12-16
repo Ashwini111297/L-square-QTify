@@ -1,0 +1,27 @@
+.feedbackBtn {
+  background-color: #121212;   /* deep black */
+  color: #34c94b;              /* QTify green */
+
+  padding: 12px 32px;
+  border-radius: 999px;        /* pill shape */
+  border: none;
+  outline: none;
+
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+
+  cursor: pointer;
+}
+
+.feedbackBtn:hover {
+  opacity: 0.9;
+}
+.navbar {
+  background-color: #34c94b;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}

@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+
+  width: 520px;
+  height: 48px;
+}
+
+.search {
+  flex: 1;
+  border: none;
+  outline: none;
+
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.searchButton {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  background-color: white;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchButton img,
+.searchButton svg {
+  width: 18px;
+  height: 18px;
+}

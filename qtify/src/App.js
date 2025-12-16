@@ -1,12 +1,13 @@
 import React from "react";
-import Navbar from "qtify/src/App.js";
-import "./App.css";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
-    </div>
+      <Hero />
+    </>
   );
 }
 
