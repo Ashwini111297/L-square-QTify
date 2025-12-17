@@ -1,19 +1,24 @@
-.feedbackButton {
-  background-color: #121212 !important; /* black */
-  color: #34c94b !important;           /* green text */
+/* Button.module.css */
 
-  padding: 10px 28px;
-  border-radius: 999px;
-  border: none;
-
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-
-  cursor: pointer;
+:root {
+  --btn-bg: #000000;
+  --btn-text: #3fe46b;      /* example QTify-like green */
 }
 
+.button {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 2px solid var(--btn-text);
+  border-radius: 999px;      /* strong pill radius like screenshot */
+  padding: 6px 32px;         /* narrow height, wide width */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
 
+/* optional: keep hover same, only cursor needed */
 .button:hover {
-  opacity: 0.95;
+  cursor: pointer;
 }

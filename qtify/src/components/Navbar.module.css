@@ -1,22 +1,3 @@
-.feedbackBtn {
-  background-color: #121212;   /* deep black */
-  color: #34c94b;              /* QTify green */
-
-  padding: 12px 32px;
-  border-radius: 999px;        /* pill shape */
-  border: none;
-  outline: none;
-
-  font-size: 16px;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-
-  cursor: pointer;
-}
-
-.feedbackBtn:hover {
-  opacity: 0.9;
-}
 .navbar {
   background-color: #34c94b;
   height: 72px;
@@ -24,4 +5,24 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
+}
+/* Navbar.module.css */
+
+:root {
+  --qtify-green: #3fe46b;  /* use exact green from your Figma */
+  --qtify-black: #000000;
+}
+
+
+.feedbackButton {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--qtify-black);
+  color: var(--qtify-green);
+  border: 2px solid var(--qtify-green);
+  border-radius: 999px;      /* strong pill shape */
+  padding: 6px 32px;         /* tweak until it matches image height/width */
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
 }
