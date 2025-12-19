@@ -1,14 +1,13 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Section from "./components/Section"
+import Songs from "./components/Songs";
 
 function App() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Section/>
+      <Songs />
     </>
   );
 }

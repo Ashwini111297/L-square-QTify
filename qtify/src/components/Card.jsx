@@ -1,19 +1,14 @@
-import React from "react";
+import { Chip } from "@mui/material";
 import styles from "./Card.module.css";
-import Chip from "@mui/material/Chip";
 
-function Card({ image, title, follows }) {
+function Card({ image, title, count, type }) {
   return (
     <div className={styles.card}>
-      {/* Image Section */}
-      <div className={styles.imageWrapper}>
-        <img src={image} alt={title} />
-      </div>
+      <img src={image} alt={title} className={styles.image} />
 
-      {/* Bottom Section */}
-      <div className={styles.cardContent}>
+      <div className={styles.bottom}>
         <Chip
-          label={`${follows} Follows`}
+          label={`${count} ${type === "song" ? "Likes" : "Follows"}`}
           size="small"
           className={styles.chip}
         />

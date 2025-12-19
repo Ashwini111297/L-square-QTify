@@ -1,56 +1,40 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Card from "../components/Card";
-import styles from "../components/Section.module.css";
+import { useState } from "react";
+import Carousel from "./Carousel";
+import styles from "./Section.module.css";
 
-function Section() {
-  const [albums, setAlbums] = useState([]);
+function Section({
+  title,
+  data = [],        // ✅ DEFAULT VALUE (THIS FIXES THE CRASH)
+  renderItem,
+  collapsible = true
+}) {
   const [collapsed, setCollapsed] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchAlbums = async () => {
-      try {
-        const response = await axios.get(
-          "https://qtify-backend.labs.crio.do/albums/top"
-        );
-        setAlbums(response.data);
-      } catch (err) {
-        setError("Failed to fetch albums");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchAlbums();
-  }, []);
 
   return (
-    <section className={styles.section}>
+    <div className={styles.section}>
       <div className={styles.header}>
-        <h3>Top Albums</h3>
-        <button onClick={() => setCollapsed((prev) => !prev)}>
-          {collapsed ? "Show All" : "Collapse"}
-        </button>
+        <h3>{title}</h3>
+
+        {collapsible && (
+          <button
+            className={styles.toggle}
+            onClick={() => setCollapsed(!collapsed)}
+          >
+            {collapsed ? "Show All" : "Collapse"}
+          </button>
+        )}
       </div>
 
-      {loading && <p>Loading albums...</p>}
-      {error && <p>{error}</p>}
-
-      {!collapsed && !loading && !error && (
+      {!collapsed ? (
         <div className={styles.grid}>
-          {albums.map((album) => (
-            <Card
-              key={album.id}
-              image={album.image}
-              title={album.title}
-              follows={album.follows}
-            />
-          ))}
+          {data.map(renderItem)}
         </div>
+      ) : (
+        <Carousel>
+          {data.map(renderItem)}
+        </Carousel>
       )}
-    </section>
+    </div>
   );
 }
 
