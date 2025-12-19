@@ -39,19 +39,20 @@ function Songs() {
       </Tabs>
 
       <Section
-        title="Songs"
-        data={filteredSongs}
-        collapsible={false}
-        renderItem={(song) => (
-          <Card
-            key={song.id}
-            image={song.image}
-            title={song.title}
-            count={song.likes}
-            type="song"
-          />
-        )}
-      />
+  title="Songs"
+  data={filteredSongs}
+  collapsible={false}
+  renderItem={(song) => (
+    <Card
+      key={song.id}
+      image={song.image}
+      title={song.title}
+      count={song.likes}
+      type="song"
+    />
+  )}
+/>
+
     </>
   );
 }
